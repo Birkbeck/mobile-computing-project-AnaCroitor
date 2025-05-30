@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">CulinaryCompanion_AnaCroitor</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="brunch">Brunch</string>
+    <string name="lunch">Lunch</string>
+    <string name="dinner">Dinner</string>
+    <string name="dessert">Dessert</string>
+    <string name="other">Other</string>
+    <string name="add_new_recipe">Add New Recipe</string>
+    <string name="culinary_companion">Culinary Companion</string>
+    <string name="menu_icon">Menu</string>
+    <string name="profile_icon">Profile</string>
+    <string name="breakfast_recipe">Breakfast Recipe</string>
+    <string name="recipe_1">Recipe 1</string>
+    <string name="recipe_2">Recipe 2</string>
+    <string name="recipe_3">Recipe 3</string>
+    <string name="recipe_4">Recipe 4</string>
+    <string name="recipe_5">Recipe 5</string>
+    <string name="recipe_6">Recipe 6</string>
+    <string name="recipe_7">Recipe 7</string>
+    <string name="recipe_8">Recipe 8</string>
+    <string name="go_back">Go Back</string>
 </resources>
