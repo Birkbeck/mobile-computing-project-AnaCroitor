@@ -25,4 +25,10 @@
     <string name="delete_recipe">Delete Recipe</string>
     <string name="go_back">Go Back</string>
     <string name="next_recipe">Next Recipe</string>
+    <string name="create_edit_recipe">Create/Edit Recipe</string>
+    <string name="enter_recipe_name">Enter recipe name</string>
+    <string name="enter_ingredients">Enter ingredients</string>
+    <string name="enter_cooking_instructions">Enter cooking instructions</string>
+    <string name="save_recipe">Save Recipe</string>
+    <string name="cancel">Cancel</string>
 </resources>
