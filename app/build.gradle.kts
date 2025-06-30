@@ -48,5 +48,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
+    implementation(libs.lifecycle.viewmodel)
     ksp(libs.room.compiler)
 }
