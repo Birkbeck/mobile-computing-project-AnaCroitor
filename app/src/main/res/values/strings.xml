@@ -31,4 +31,5 @@
     <string name="enter_cooking_instructions">Enter cooking instructions</string>
     <string name="save_recipe">Save Recipe</string>
     <string name="cancel">Cancel</string>
+    <string name="label_recipe_title_placeholder">Recipe Title</string>
 </resources>
