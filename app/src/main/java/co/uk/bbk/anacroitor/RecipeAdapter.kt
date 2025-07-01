@@ -5,6 +5,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.DiffUtil
+
+class RecipeDiffCallback(
+    private val oldList: List<Recipe>,
+    private val newList: List<Recipe>
+) : DiffUtil.Callback() {
+    override fun getOldListSize() = oldList.size
+    override fun getNewListSize() = newList.size
+    override fun areItemsTheSame(oldPos: Int, newPos: Int): Boolean {
+        return oldList[oldPos].id == newList[newPos].id
+    }
+    override fun areContentsTheSame(oldPos: Int, newPos: Int): Boolean {
+        return oldList[oldPos] == newList[newPos]
+    }
+}
 
 class RecipeAdapter(
     private var recipes: List<Recipe>,
@@ -12,7 +27,7 @@ class RecipeAdapter(
 ) : RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
 
     inner class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvTitle = itemView.findViewById<TextView>(R.id.tvRecipeTitle)
+        val tvTitle: TextView = itemView.findViewById(R.id.tvRecipeTitle)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
@@ -29,7 +44,8 @@ class RecipeAdapter(
     }
 
     fun updateList(newList: List<Recipe>) {
+        val diffResult = DiffUtil.calculateDiff(RecipeDiffCallback(recipes, newList))
         recipes = newList
-        notifyDataSetChanged()
+        diffResult.dispatchUpdatesTo(this)
     }
 }
