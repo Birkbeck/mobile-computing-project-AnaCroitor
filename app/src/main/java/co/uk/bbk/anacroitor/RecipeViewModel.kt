@@ -6,13 +6,17 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
+// Manages recipe data
 class RecipeViewModel(application: Application) : AndroidViewModel(application) {
 
+    // Create repository
     private val dao = AppDatabase.getInstance(application).recipeDao()
     private val repository = RecipeRepository(dao)
 
+    // LiveData observable list of all recipes
     val recipeList = MutableLiveData<List<Recipe>>()
 
+    // Fetch all recipes and update LiveData
     fun loadRecipes() {
         viewModelScope.launch {
             val data = repository.getAllRecipes()
@@ -20,6 +24,7 @@ class RecipeViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
+    // Insert a recipe and refresh list
     fun insert(recipe: Recipe) {
         viewModelScope.launch {
             repository.insert(recipe)
@@ -27,6 +32,7 @@ class RecipeViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
+    // Update a recipe and refresh list
     fun update(recipe: Recipe) {
         viewModelScope.launch {
             repository.update(recipe)
@@ -34,6 +40,7 @@ class RecipeViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
+    // Delete a recipe and refresh list
     fun delete(recipe: Recipe) {
         viewModelScope.launch {
             repository.delete(recipe)
@@ -41,6 +48,7 @@ class RecipeViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
+    // Get a recipe by ID and return result via callback
     fun getRecipeById(id: Int, onResult: (Recipe?) -> Unit) {
         viewModelScope.launch {
             val recipe = repository.getRecipeById(id)
