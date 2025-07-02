@@ -18,6 +18,15 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    configurations.all {
+        resolutionStrategy.eachDependency {
+            if (requested.group == "org.jetbrains.kotlin" && requested.name.startsWith("kotlin-stdlib")) {
+                useVersion("1.9.22")
+                because("Prevent Kotlin 2.1.x stdlib sneaking in and breaking KSP")
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
