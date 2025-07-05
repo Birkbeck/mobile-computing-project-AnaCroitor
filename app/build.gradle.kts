@@ -59,4 +59,7 @@ dependencies {
     implementation(libs.room.ktx)
     implementation(libs.lifecycle.viewmodel)
     ksp(libs.room.compiler)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.coroutines.test)
+    testImplementation(libs.arch.core.testing)
 }
