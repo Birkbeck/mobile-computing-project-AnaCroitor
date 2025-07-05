@@ -7,11 +7,13 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
 // Manages recipe data
-class RecipeViewModel(application: Application) : AndroidViewModel(application) {
-
-    // Create repository
-    private val dao = AppDatabase.getInstance(application).recipeDao()
-    private val repository = RecipeRepository(dao)
+class RecipeViewModel(
+    application: Application,
+    // Default to real repository unless overridden in unit tests
+    private val repository: RecipeRepository = RecipeRepository(
+        AppDatabase.getInstance(application).recipeDao()
+    )
+) : AndroidViewModel(application) {
 
     // LiveData observable list of all recipes
     val recipeList = MutableLiveData<List<Recipe>>()
