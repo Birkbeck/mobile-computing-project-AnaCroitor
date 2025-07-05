@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 class CreateEditRecipeActivity : AppCompatActivity() {
 
     private lateinit var viewModel: RecipeViewModel
-    private var recipeId: Int? = null // For edit mode detection
+    private var recipeId: Int? = null // Edit mode detection
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,12 +72,12 @@ class CreateEditRecipeActivity : AppCompatActivity() {
             finish()
         }
 
-        // Optional: Cancel button just finishes the activity
+        // Cancel button just finishes the activity
         btnCancel.setOnClickListener {
             finish()
         }
 
-        // Optional: Delete button only active if editing
+        // Delete button only active if editing
         btnDelete.setOnClickListener {
             recipeId?.let { id ->
                 viewModel.getRecipeById(id) { recipe ->

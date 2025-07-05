@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.DiffUtil
 
+// Callback used by DiffUtil to optimize RecyclerView updates
 class RecipeDiffCallback(
     private val oldList: List<Recipe>,
     private val newList: List<Recipe>
@@ -21,6 +22,7 @@ class RecipeDiffCallback(
     }
 }
 
+// RecyclerView adapter for displaying a list of Recipe objects
 class RecipeAdapter(
     private var recipes: List<Recipe>,
     private val onItemClick: (Recipe) -> Unit
@@ -43,6 +45,7 @@ class RecipeAdapter(
         holder.itemView.setOnClickListener { onItemClick(recipe) }
     }
 
+    // Updates the list using DiffUtil to optimize RecyclerView animations
     fun updateList(newList: List<Recipe>) {
         val diffResult = DiffUtil.calculateDiff(RecipeDiffCallback(recipes, newList))
         recipes = newList

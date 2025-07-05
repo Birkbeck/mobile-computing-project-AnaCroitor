@@ -42,67 +42,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Recipe Buttons
-    <GridLayout
-        android:id="@+id/gridRecipes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:columnCount="2"
-        android:rowCount="4"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <Button
-            android:id="@+id/recipe1"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:text="@string/recipe_1"/>
-
-        <Button
-            android:id="@+id/recipe2"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:text="@string/recipe_2"/>
-
-        <Button
-            android:id="@+id/recipe3"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:text="@string/recipe_3"/>
-
-        <Button
-            android:id="@+id/recipe4"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:text="@string/recipe_4"/>
-
-        <Button
-            android:id="@+id/recipe5"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:text="@string/recipe_5"/>
-
-        <Button
-            android:id="@+id/recipe6"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:text="@string/recipe_6"/>
-
-        <Button
-            android:id="@+id/recipe7"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:text="@string/recipe_7"/>
-
-        <Button
-            android:id="@+id/recipe8"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:text="@string/recipe_8"/>
-    </GridLayout> -->
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRecipes"
         android:layout_width="0dp"
